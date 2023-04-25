@@ -1,0 +1,21 @@
+uint16 NONE=0
+uint16 UNKNOWN=200
+uint16 INVALID_PLANNER=201
+uint16 START_OUTSIDE_MAP=202
+uint16 GOAL_OUTSIDE_MAP=203
+uint16 START_OCCUPIED=204
+uint16 GOAL_OCCUPIED=205
+uint16 TIMEOUT=206
+uint16 NO_VALID_PATH=207
+
+# Request
+geometry_msgs/PoseStamped start
+geometry_msgs/PoseStamped goal
+string planner_id
+---
+# Result
+nav_msgs/Path path
+builtin_interfaces/Duration planning_time
+uint16 error_code
+---
+# Feedback

@@ -1,0 +1,2 @@
+nav_msgs/Odometry odometry_desired
+uint32 current_waypoint

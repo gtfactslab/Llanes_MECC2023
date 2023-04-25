@@ -1,0 +1,5 @@
+<library path="rrtx_static">
+    <class type="rrtx_static_planner::RrtxStatic" base_class_type="uam_planner::PlannerBase">
+        <description>RRTX static motion planner plugin.</description>
+    </class>
+</library>

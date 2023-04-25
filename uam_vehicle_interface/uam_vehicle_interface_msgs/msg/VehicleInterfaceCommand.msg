@@ -1,0 +1,5 @@
+
+uint8 VEHICLE_KILL_SWITCH_DISABLE = 0
+uint8 VEHICLE_KILL_SWITCH_ENABLE = 1
+
+uint8 command

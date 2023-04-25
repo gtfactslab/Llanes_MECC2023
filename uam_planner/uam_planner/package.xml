@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>uam_planner</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="christian.llanes@gatech.edu">llanesc</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>rclcpp_action</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>pluginlib</depend>
+  <depend>builtin_interfaces</depend>
+  <depend>uam_planner_msgs</depend>
+  <depend>uam_util</depend>
+  <depend>eigen3_cmake_module</depend>
+  <depend>eigen</depend>
+  <depend>geometric_shapes</depend>
+  <depend>uam_mapping_msgs</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <uam_planner plugin="${prefix}/planner_plugins/rrtx_static/plugin.xml" />
+  </export>
+</package>

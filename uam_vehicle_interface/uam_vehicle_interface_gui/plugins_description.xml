@@ -1,0 +1,7 @@
+<library path="vehicle_rviz_plugins">
+    <class name="uam_vehicle_interface_gui/Vehicle Interface Panel"
+           type="uam_vehicle_interface_gui::VehicleInterfacePanel"
+           base_class_type="rviz_common::Panel">
+        <description>The vehicle interface rviz panel.</description>
+    </class>
+</library>

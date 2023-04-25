@@ -1,0 +1,77 @@
+uam_vehicle_interface:
+  ros__parameters:
+    environment: "Vehicle"
+    vehicle_mass: 0.72
+    motor_thrust_max: 12.5
+    motor_thrust_armed: 0.026975
+    motor_constant: 0.00000584
+    motor_input_scaling: 1000.0
+
+navigator:
+  ros__parameters:
+    takeoff:
+      altitude: 0.75
+      position_tolerance: 0.2
+      velocity_tolerance: 0.3
+    navigate_to_pose:
+      planner: "RrtxStatic"
+      waypoint_position_tolerance: 0.1
+      goal_position_tolerance: 0.1
+      goal_velocity_tolerance: 0.1
+
+planner_server:
+  ros__parameters:
+    planner_plugins: ["RrtxStatic"]
+    global_frame: "map"
+    robot_base_frame: "base_link"
+    RrtxStatic:
+      obstacle_scaling: 3.0
+
+static_obstacle_advertiser:
+  ros__parameters:
+    obstacle_ids: ['1', '2', '3', '4', '5', '6',
+                   '7', '8', '9', '10', '11', '12',
+                   '13', '14', '15', '16', '17', '18',
+                   '19', '20', '21']
+    obstacles_x: [ 1.524,
+                   2.1336,
+                   2.7432,
+                   3.3528,
+                   3.9624,
+                   3.9624,
+                   3.9624,
+                   3.9624,
+                   2.1336,
+                   2.1336,
+                   2.1336,
+                   2.1336,
+                   2.1336,
+                   1.524,
+                   0.9144,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048]
+    obstacles_y: [ 0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.9144,
+                   1.524,
+                   2.1336,
+                   2.7432,
+                   2.1336,
+                   2.7432,
+                   3.3528,
+                   3.9624,
+                   4.572,
+                   4.572,
+                   4.572,
+                   4.572,
+                   3.9624,
+                   3.3528,
+                   2.7432,
+                   2.1336,
+                   1.524]

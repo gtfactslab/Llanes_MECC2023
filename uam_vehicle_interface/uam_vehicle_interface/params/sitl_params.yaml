@@ -1,0 +1,93 @@
+uam_vehicle_interface:
+  ros__parameters:
+    environment: "SITL"
+    vehicle_mass: 1.56
+    motor_thrust_max: 12.5
+    motor_thrust_armed: 0.026975
+    motor_constant: 0.00000584
+    motor_input_scaling: 1000.0
+
+navigator:
+  ros__parameters:
+    takeoff:
+      altitude: 0.7
+      position_tolerance: 0.1
+      velocity_tolerance: 0.3
+      update_frequency: 30.0 # Hz
+    navigate_to_pose:
+      planner: "rrtx_static"
+      waypoint_position_tolerance: 0.1
+      goal_position_tolerance: 0.1
+      goal_velocity_tolerance: 0.1
+      update_frequency: 100.0 # Hz
+
+uam_control:
+  ros__parameters:
+    rrtx_static:
+      critic_convergence_rate: 10.0
+      actor_convergence_rate: 0.5
+      minimum_altitude_for_learning: 0.6
+      learning_update_frequency: 100.0 # Hz
+
+planner_server:
+  ros__parameters:
+    planner_plugins: ["rrtx_static"]
+    global_frame: "map"
+    robot_base_frame: "base_link"
+    rrtx_static:
+      plugin: "rrtx_static_planner::RrtxStatic"
+      obstacle_scaling: 2.0
+      bounds_low:  [-0.5, -0.5, 0.6]
+      bounds_high: [4.2672, 4.8768, 1.2]
+      solve_time: 0.5 # Seconds
+
+static_obstacle_advertiser:
+  ros__parameters:
+    obstacle_ids: ['1', '2', '3', '4', '5', '6',
+                   '7', '8', '9', '10', '11', '12',
+                   '13', '14', '15', '16', '17', '18',
+                   '19', '20', '21']
+#    obstacles_x: []
+#    obstacles_y: []
+    obstacles_x: [ 1.524,
+                   2.1336,
+                   2.7432,
+                   3.3528,
+                   3.9624,
+                   3.9624,
+                   3.9624,
+                   3.9624,
+                   2.1336,
+                   2.1336,
+                   2.1336,
+                   2.1336,
+                   2.1336,
+                   1.524,
+                   0.9144,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048]
+    obstacles_y: [ 0.3048,
+                   0.3048,
+                   0.3048,
+                   0.3048,
+                   0.9144,
+                   1.524,
+                   2.1336,
+                   2.7432,
+                   2.1336,
+                   2.7432,
+                   3.3528,
+                   3.9624,
+                   4.572,
+                   4.572,
+                   4.572,
+                   4.572,
+                   3.9624,
+                   3.3528,
+                   2.7432,
+                   2.1336,
+                   1.524]

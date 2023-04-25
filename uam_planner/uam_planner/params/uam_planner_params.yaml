@@ -1,0 +1,6 @@
+planner_server:
+  ros__parameters:
+    planner_plugins: ["rrtx_static"]
+    rrtx_static:
+      plugin: "uam_planner/RrtxStatic"
+      max_duration_ms: 1000

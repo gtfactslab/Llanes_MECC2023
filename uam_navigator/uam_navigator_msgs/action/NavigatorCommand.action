@@ -1,0 +1,12 @@
+uint16 NAV_RESPONSE_INVALID_NAVIGATOR=100
+uint16 NAV_RESPONSE_INVALID_TRANSITION=101
+uint16 NAV_RESPONSE_NAVIGATOR_MODE_ACTIVATION_FAILED=102
+
+# Request
+geometry_msgs/PoseStamped goal
+string command
+---
+# Result
+uint16 error_code
+---
+# Feedback
